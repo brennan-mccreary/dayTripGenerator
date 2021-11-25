@@ -84,12 +84,17 @@ if(change === "y") { //if yes, determine which choice to change
             console.log("Please enter a valid category");
         }
 
-        if(change === "n") {
-            console.log("\nEnjoy your trip!");
+        
+        if(change !== "y" && change !== "n") { //require valid input
+            while(change !== "y" && change !== "n") {
+                console.log("\nPlease enter 'Y' or 'N'");
+                change = prompt("Would You Like to Change Any of These Choices?\nY or N");
+                change = change.toLowerCase(change);
+            }
         }
-        else if(change !== "y") {
-            console.log("\nPlease enter 'Y' or 'N'");
-        }
+        else if(change === "n") { //exit loop
+                console.log("\nEnjoy your trip!");
+            }
     }
 }
 else if(change === "n") {
