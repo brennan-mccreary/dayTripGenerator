@@ -36,7 +36,7 @@ let entertainmentChoice = entertainmentArr[selectRandomArrayIndex(transportation
 logTripChoices();
 
 //allow user to replace a choice
-let change = prompt("Would You Like to Change Any of These Choices?\nY or N"); 
+let change = prompt("Would You Like to Change Any of These Choices?\nY to change a choice\nN to complete trip");
 let option;
 change = change.toLowerCase(change);
 
@@ -50,7 +50,7 @@ if(change === "y") { //if yes, determine which choice to change
             destinationsChoice = destinationsArr[selectRandomArrayIndex(destinationsArr)];
             logTripChoices();
 
-            change = prompt("Would You Like to Change Any of These Choices?\nY or N");
+            change = prompt("Would You Like to Change Any of These Choices?\nY to change a choice\nN to complete trip");
             change = change.toLowerCase(change);
         }
         else if(option === "restaurant") {
@@ -59,7 +59,7 @@ if(change === "y") { //if yes, determine which choice to change
             restaurantsChoice = restaurantsArr[selectRandomArrayIndex(restaurantsArr)];
             logTripChoices();
 
-            change = prompt("Would You Like to Change Any of These Choices?\nY or N");
+            change = prompt("Would You Like to Change Any of These Choices?\nY to change a choice\nN to complete trip");
             change = change.toLowerCase(change);
         }
         else if(option === "transportation") {
@@ -68,7 +68,7 @@ if(change === "y") { //if yes, determine which choice to change
             transportationChoice = transportationArr[selectRandomArrayIndex(transportationArr)];
             logTripChoices();
 
-            change = prompt("Would You Like to Change Any of These Choices?\nY or N");
+            change = prompt("Would You Like to Change Any of These Choices?\nY to change a choice\nN to complete trip");
             change = change.toLowerCase(change);
         }
         else if(option === "entertainment") {
@@ -77,7 +77,7 @@ if(change === "y") { //if yes, determine which choice to change
             entertainmentChoice = entertainmentArr[selectRandomArrayIndex(transportationArr)];
             logTripChoices();
 
-            change = prompt("Would You Like to Change Any of These Choices?\nY or N");
+            change = prompt("Would You Like to Change Any of These Choices?\nY to change a choice\nN to complete trip");
             change = change.toLowerCase(change);
         }
         else {
@@ -88,17 +88,21 @@ if(change === "y") { //if yes, determine which choice to change
         if(change !== "y" && change !== "n") { //require valid input
             while(change !== "y" && change !== "n") {
                 console.log("\nPlease enter 'Y' or 'N'");
-                change = prompt("Would You Like to Change Any of These Choices?\nY or N");
+                change = prompt("Would You Like to Change Any of These Choices?\nY to change a choice\nN to complete trip");
                 change = change.toLowerCase(change);
             }
         }
         else if(change === "n") { //exit loop
-                console.log("\nEnjoy your trip!");
+                console.log(`\n\nCompleted Trip:\n\n`);
+                logTripChoices();
+                console.log(`\nEnjoy Your Trip!`);
             }
     }
 }
 else if(change === "n") {
-    console.log("\nEnjoy your trip!");
+    console.log(`\n\nCompleted Trip:\n\n`);
+    logTripChoices();
+    console.log(`\nEnjoy Your Trip!`);
 }
 else {
     console.log("\nPlease enter 'Y' or 'N'");
